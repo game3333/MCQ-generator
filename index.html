@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="mcq.css">
+
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Automatic MCQ Generator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+  <h1>Automatic MCQ Generator</h1>
+  <p class="lead">Upload a PDF or Image or paste your notes below to generate multiple-choice questions automatically.</p>
+
+  <!-- ✅ Upload Section -->
+  <div class="card">
+    <h2>Select File</h2>
+
+    <label class="small">Upload PDF File</label>
+    <input type="file" id="pdfUpload" accept="application/pdf">
+
+    <label class="small" style="margin-top:10px;">Upload Image File</label>
+    <input type="file" id="imageUpload" accept="image/*">
+
+    <div class="row">
+      <button id="extractPdfBtn">Extract from PDF</button>
+      <button id="extractImgBtn">Extract From Image</button>
+    </div>
+
+    <p class="small">Or manually paste your text below 👇</p>
+  </div>
+
+  <!-- ✅ Existing text input -->
+  <div class="card">
+    <label class="small">Input text / notes</label>
+    <textarea id="inputText" placeholder="Paste text here..."></textarea>
+
+    <div class="row">
+      <label class="small">Max Questions</label>
+      <input id="maxQ" type="number" min="1" max="50" value="8">
+
+      <label class="small">Options per Question</label>
+      <input id="dCount" type="number" min="1" max="6" value="3">
+
+      <label class="small">MCQ Type</label>
+    <select id="mcqType">
+    <option value="easy">Easy</option id = "o">
+    <option value="medium">Medium</option id = "o">
+    <option value="hard">Hard</option id = "o">
+    </select>
+
+
+      <button id="generateBtn">Generate MCQs</button>
+    </div>
+  </div>
+
+  <!-- ✅ Output Section -->
+  <div class="card" id="outputCard" style="display:none;">
+    <h3 id="qCount"></h3>
+    <p class="small" id="sourceCount"></p>
+    <div id="mcqList"></div>
+
+    <div class="export-buttons">
+      <button id="exportJSON">Export JSON</button>
+      <button id="exportCSV">Export CSV</button>
+      <button id="copyToClipboard">Copy</button>
+      <button id="clearAll" class="outline">Clear</button>
+    </div>
+  </div>
+</div>
+
+<!-- Add PDF.js library -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
+
+<script src="mcq.js"></script>
+
+
+  <script src="mcq.js"></script>
+</body>
+</html>
+
+</body>
+</html>
